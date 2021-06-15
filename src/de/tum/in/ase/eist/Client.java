@@ -51,8 +51,8 @@ public final class Client {
 	private static List<PhoneBookEntry> createRandomPhoneBook() {
 		int listLength = randomIntegerWithin(PHONEBOOK_MIN_SIZE, PHONEBOOK_MAX_SIZE);
 
-		List<PhoneBookEntry> phoneBook =
-				createNames(listLength).stream().map(name -> new PhoneBookEntry(name, createRandomPhoneNumber())).collect(Collectors.toList());
+		List<PhoneBookEntry> phoneBook = createNames(listLength).stream()
+        		.map(name -> new PhoneBookEntry(name, createRandomPhoneNumber())).collect(Collectors.toList());
 
 		boolean sorted = randomIntegerWithin(0, 1) == 0;
 		if (sorted) {
