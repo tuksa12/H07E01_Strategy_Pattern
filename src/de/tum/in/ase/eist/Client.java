@@ -39,6 +39,7 @@ public final class Client {
 			List<PhoneBookEntry> list = createRandomPhoneBook();
 			// TODO 9: Configure Context
 			context.setPhoneBook(list);
+			policy.configure();
 			String nameToSearch = createNames(1).get(0);
 			// TODO 10: Search for name in phonebook and store the result in phoneNumber
 			String phoneNumber = context.search(nameToSearch);

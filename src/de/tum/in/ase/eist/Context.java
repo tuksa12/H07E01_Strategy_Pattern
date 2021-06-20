@@ -12,16 +12,11 @@ public class Context {
         phoneBook = new ArrayList<>();
     }
 
-    public String search(String name){
-        if (isPhoneBookSorted()){
-            searchAlgorithm = new BinarySearch();
-        } else {
-            searchAlgorithm = new LinearSearch();
-        }
+    public String search(String name) {
         return searchAlgorithm.performSearch(phoneBook, name);
     }
 
-    public boolean isPhoneBookSorted(){
+    public boolean isPhoneBookSorted() {
         return phoneBook.stream().sorted().collect(Collectors.toList()).equals(phoneBook);
     }
 
@@ -31,5 +26,9 @@ public class Context {
 
     public void setPhoneBook(List<PhoneBookEntry> phoneBook) {
         this.phoneBook = phoneBook;
+    }
+
+    public void setSearchAlgorithm(SearchStrategy searchAlgorithm) {
+        this.searchAlgorithm = searchAlgorithm;
     }
 }

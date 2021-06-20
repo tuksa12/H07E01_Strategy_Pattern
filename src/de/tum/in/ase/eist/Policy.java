@@ -7,7 +7,13 @@ public class Policy {
         this.context = context;
     }
 
-    public void configure(){
-        context.isPhoneBookSorted();
+    public void configure() {
+        if (context.isPhoneBookSorted()) {
+            if (context.isPhoneBookSorted()) {
+                context.setSearchAlgorithm(new BinarySearch());
+            } else {
+                context.setSearchAlgorithm(new LinearSearch());
+            }
+        }
     }
 }

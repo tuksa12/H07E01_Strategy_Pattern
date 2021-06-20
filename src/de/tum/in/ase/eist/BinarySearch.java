@@ -12,9 +12,10 @@ public class BinarySearch implements SearchStrategy {
             }
         } else{
             if (phoneBook.size() % 2 == 0) {
-                if (phoneBook.get(phoneBook.size() / 2).getName().equals(name)){
+                if (phoneBook.get(phoneBook.size() / 2).getName().equals(name)) {
                     return name;
                 } else {
+                    //if (phoneBook.get(phoneBook.size() / 2).getName())
                     List<PhoneBookEntry> copy = new ArrayList<>();
                     for (int i = 0; i < phoneBook.size() / 2 + 1; i++) {
                         copy.add(phoneBook.get(i));
@@ -23,7 +24,7 @@ public class BinarySearch implements SearchStrategy {
                 }
             }
             else {
-                if (phoneBook.get(phoneBook.size() / 2).getName().equals(name)){
+                if (phoneBook.get(phoneBook.size() / 2).getName().equals(name)) {
                     return name;
                 } else {
                     List<PhoneBookEntry> copy = new ArrayList<>();
