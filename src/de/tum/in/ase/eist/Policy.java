@@ -8,6 +8,6 @@ public class Policy {
     }
 
     public void configure(){
-
+        context.isPhoneBookSorted();
     }
 }

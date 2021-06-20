@@ -30,16 +30,18 @@ public final class Client {
 	 */
 	public static void main(String[] args) {
 		// TODO 7: Init Context and Policy
+		Context context = new Context();
+		Policy policy = new Policy(context);
 
 		// Run 10 times to simulate different search strategies
 		for (int i = 0; i < NUMBER_OF_SIMULATIONS; i++) {
 			// TODO 8: Create a list of phonebook entries using the method createRandomPhoneBook
-
+			List<PhoneBookEntry> list = createRandomPhoneBook();
 			// TODO 9: Configure Context
-
+			context.setPhoneBook(list);
 			String nameToSearch = createNames(1).get(0);
 			// TODO 10: Search for name in phonebook and store the result in phoneNumber
-			String phoneNumber = "";
+			String phoneNumber = context.search(nameToSearch);
 			System.out.println("Corresponding phone number for " + nameToSearch + ": " + phoneNumber);
 		}
 	}
