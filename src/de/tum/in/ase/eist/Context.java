@@ -17,7 +17,11 @@ public class Context {
     }
 
     public boolean isPhoneBookSorted() {
-        return phoneBook.stream().sorted().collect(Collectors.toList()).equals(phoneBook);
+        List<String> phoneNames = new ArrayList<>();
+        for (int i = 0; i < phoneBook.size(); i++) {
+            phoneNames.add(phoneBook.get(i).getName());
+        }
+        return phoneNames.stream().sorted().collect(Collectors.toList()).equals(phoneNames);
     }
 
     public List<PhoneBookEntry> getPhoneBook() {
@@ -30,5 +34,9 @@ public class Context {
 
     public void setSearchAlgorithm(SearchStrategy searchAlgorithm) {
         this.searchAlgorithm = searchAlgorithm;
+    }
+
+    public SearchStrategy getSearchAlgorithm() {
+        return searchAlgorithm;
     }
 }
